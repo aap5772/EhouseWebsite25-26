@@ -1,228 +1,141 @@
-<!DOCTYPE HTML>
-<!--
-    Photon by HTML5 UP
-    html5up.net
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
-
-    <title>Leadership</title>
-
-    <link rel="stylesheet" href="Content/bootstrap.min.css"/>
-    <link rel="stylesheet" href="assets/css/main.css"/>
-    <link rel="stylesheet" href="Content/Site.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-83915670-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-    <script type="text/javascript">
-        var x, n = 0, rotINT
-        var vel = 0;
-
-        function rotateLogo() {
-            vel = vel + 1.5 / (vel + 1);
-            x = document.getElementById("rotate")
-            clearInterval(rotINT)
-            rotINT = setInterval("startRotate()", 3)
-        }
-
-        function startRotate() {
-            //n = n + 1
-            //if (n >= 45) {
-            //    clearInterval(rotINT)
-            //    n = 0;
-            //}
-
-            //var k = n / 45.0
-            //k = - k * k * (2 * k - 3) * 45
-
-            n = (n + vel) % 360;
-            var k = n;
-            vel -= 0.0075;
-
-            if (vel < 0)
-                clearInterval(rotINT)
-
-            x.style.transform = "rotate(" + k + "deg)"
-            x.style.webkitTransform = "rotate(" + k + "deg)"
-            x.style.OTransform = "rotate(" + k + "deg)"
-            x.style.MozTransform = "rotate(" + k + "deg)"
-        }
-    </script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering House — FAQ</title>
+  <meta name="description" content="Frequently asked questions about Engineering House at RIT.">
+  <link rel="stylesheet" href="css/ehouse.css">
+  <style>
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div id="nav-placeholder"></div>
 
-            <a class="navbar-brand" href="index.html">
-                <div class="logo" onmouseover="rotateLogo()">
-                    <div id="rotate" style="background-image: url('images/LogoOutside.png')"></div>
-                    <div id="center" style="background-image: url('images/LogoInside.png')"></div>
-                </div>
-            </a>
+  <main>
+
+    <!-- ====== HERO ====== -->
+    <section class="hero-section" aria-labelledby="faq-hero-title">
+      <span class="hero-section__label">INFORMATION</span>
+      <h1 class="hero-section__title" id="faq-hero-title">Frequently Asked Questions</h1>
+      <p class="hero-section__desc">
+        Have other questions? Email <a href="mailto:ehouserecruitment@gmail.com" style="color:var(--brand-yellow);text-decoration:underline;">ehouserecruitment@gmail.com</a>
+      </p>
+    </section>
+
+    <!-- ====== FAQ CONTENT ====== -->
+    <section class="section section--surface" aria-label="FAQ list">
+      <div class="faq-list">
+
+        <div class="faq-card" id="faq-1">
+          <button class="faq-card__question" aria-expanded="false" aria-controls="faq-ans-1">
+            What are the benefits of joining Engineering House?
+            <svg class="faq-card__chevron" viewBox="0 0 16 9" aria-hidden="true">
+              <polyline points="1 1 8 8 15 1"/>
+            </svg>
+          </button>
+          <div class="faq-card__answer" id="faq-ans-1">
+            Engineering House offers a supportive community of like-minded students, access to workshop spaces,
+            study lounges, social events throughout the year, ImagineRIT project opportunities, and lifelong
+            friendships with fellow engineers.
+          </div>
         </div>
 
-        <div id="navbar" class="collapse navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Information <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Membership.html">Membership</a></li>
-                        <li><a href="VirtualTour.html">Virtual Tour</a></li>
-                        <li><a href="Leadership.html">Leadership</a></li>
-                        <li><a href="FAQ.html">FAQ</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Events <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Projects.html">ImagineRIT</a></li>
-                        <li><a href="PublicRelations.html">Public Relations</a></li>
-                        <li><a href="Calendar.html">Calendar</a></li>
-                        <li><a href="Jankathon.html">Jankathon</a></li>
-                    </ul>
-                </li>
-
-            </ul>
+        <div class="faq-card" id="faq-2">
+          <button class="faq-card__question" aria-expanded="false" aria-controls="faq-ans-2">
+            What are the commitment expectations?
+            <svg class="faq-card__chevron" viewBox="0 0 16 9" aria-hidden="true">
+              <polyline points="1 1 8 8 15 1"/>
+            </svg>
+          </button>
+          <div class="faq-card__answer" id="faq-ans-2">
+            We expect members to participate in house activities and contribute to the community. This includes
+            attending house meetings, participating in events, and maintaining a positive presence on the floor.
+          </div>
         </div>
-    </div>
-</nav>
 
-<section id="one" class="main style1">
-    <div class="container">
-        <header class="major">
-            <h2>Frequently Asked Questions</h2>
-        </header>
-        <p>Here are some questions that incoming freshmen or prospective members often ask. Any other questions can be
-            directed to the Recruitment Chair at <a href="mailto: ehouserecruitment@gmail.com">ehouserecruitment@gmail.com</a>.
-        </p>
-    </div>
-</section>
-<section id="two" class="main style2">
-    <div class="container">
-        <header>
-            <h4>Q: What are the benefits of joining Engineering House? </h4>
-        </header>
-        <p>A: Engineering House provides a wealth of opportunities that you can’t get anywhere else at RIT. The access
-            to tools in a workshop setting gives the ability to easily work on projects, and building such projects is
-            an amazing resume booster. There are also many 3rd-5th years who have a wealth of knowledge about
-            upperclassmen classes and co-op opportunities, who are always willing to help. Upperclassmen are always
-            willing to help tutor and help with classwork at any time. Access to free printing and 3-D printing is a
-            pretty good perk, too. We have a movie theater as well which is awesome for playing our VR and watching
-            movies with friends. </p>
-        <header>
-            <h4>Q: What is the commitment like as a member of Engineering House?</h4>
-        </header>
-        <p>A: An active member of Engineering House will go to events and take part in projects, along with going to
-            weekly House meetings and regularly interacting with other members. This may sound like a lot, but it all
-            becomes second nature due to the instant friendships you make in this organization. Events consist of movie
-            nights, painting, and VR game nights. Projects such as the Human Hamster Wheel or Big Bertha are interesting
-            to any engineer, and are great resume boosters, so putting time into these is not detrimental. Weekly House
-            meetings are at 9pm on Sundays, and take an hour, max. They are not long and it is the best way to know of
-            upcoming fun events to join! All in all, what you put in is what you get out of it, and you can be as little
-            or as much active as you’d like to be. </p>
-        <header>
-            <h4>Q: Is Engineering House one floor? Is it a house? What the heck???</h4>
-        </header>
-        <p>A: Engineering House is located on the eighth floor of Fredericka Douglass Sprague Hall, DSP (formerly
-            Nathaniel Rochester Hall, NRH) and is one floor of dorm rooms. 47 on-floor members comprised of first and
-            second years live here, but there are off-floor members who live elsewhere who are also a part of the
-            organization. </p>
-        <header>
-            <h4>Q: What’s it like being an off-floor member? </h4>
-        </header>
-        <p>A: Off-floor members are the same as on-floor members, the only difference being where you sleep! It takes a
-            little more commitment, just due to the effort of traveling all the way up to the eighth floor of Fredericka
-            Douglass Sprague Hall, DSP (formerly Nathaniel Rochester Hall, NRH). If you are especially active in the
-            organization, you even have the ability to become an on-floor member in your second year! There are on-floor
-            and off-floor members in cabinet, as well, so truly there is no difference in terms of status. </p>
-        <header>
-            <h4>Q: What happens if we select a roommate but are then accepted to Engineering House?</h4>
-        </header>
-        <p>A: You will have the choice of living on-floor or staying with your roommate! If you choose to live with your
-            roommate, you can still be an off-floor member. </p>
-        <header>
-            <h4>Q: What is the cost to join Engineering House? </h4>
-        </header>
-        <p>A: Off-Floor dues are $40 per semester, and on-floor dues are $90 per semester. This is to help fund House
-            projects and allows us to buy 3-D printer filament, which is free for house members to use. </p>
-        <header>
-            <h4>Q: How do I join? </h4>
-        </header>
-        <p>A: Applications can be found in your housing contract if you are a freshman, or you can find us at the
-            Activities Fair! Check out our <a href="Membership.html">Membership page</a> for more information! </p>
-        <ul class="actions" style="text-align:center">
-            <li><a href="index.html" class="button special">Back to Home</a></li>
-        </ul>
-    </div>
-</section>
+        <div class="faq-card" id="faq-3">
+          <button class="faq-card__question" aria-expanded="false" aria-controls="faq-ans-3">
+            Is Engineering House one floor? What is it?
+            <svg class="faq-card__chevron" viewBox="0 0 16 9" aria-hidden="true">
+              <polyline points="1 1 8 8 15 1"/>
+            </svg>
+          </button>
+          <div class="faq-card__answer" id="faq-ans-3">
+            Engineering House is a Special Interest House (SIH) that occupies one floor in DSP (formerly NRH).
+            It's a living-learning community where students who are passionate about engineering and technology live together.
+          </div>
+        </div>
 
-<!-- Footer -->
-<section id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/RIT_Ehouse" target="_blank" class="icon alt fa-twitter"><span class="label">@RIT_Ehouse</span></a>
-        </li>
-        <li><a href="https://www.facebook.com/RITEHouse/" target="_blank" class="icon alt fa-facebook"><span
-                class="label">@RITEHouse</span></a></li>
-        <li><a href="https://www.instagram.com/rit_ehouse/" target="_blank" class="icon alt fa-instagram"><span
-                class="label">rit_ehouse</span></a></li>
-        <li><a href="mailto: ehouserecruitment@gmail.com" target="_blank" class="icon alt fa-envelope"><span
-                class="label">ehouserecruitment@gmail.com</span></a></li>
-    </ul>
-    <div class="copyright">
-        &copy; Engineering House 2020
-        <br/>
-        Design: <a href="http://html5up.net">HTML5 UP</a> &amp; Anthony Edvalson
-    </div>
-</section>
+        <div class="faq-card" id="faq-4">
+          <button class="faq-card__question" aria-expanded="false" aria-controls="faq-ans-4">
+            What is the off-floor member experience like?
+            <svg class="faq-card__chevron" viewBox="0 0 16 9" aria-hidden="true">
+              <polyline points="1 1 8 8 15 1"/>
+            </svg>
+          </button>
+          <div class="faq-card__answer" id="faq-ans-4">
+            Off-floor members participate in all the same events and have access to the same resources. The recruitment
+            chair helps off-floor members stay connected with the community, and there may be opportunities to move
+            on-floor if spots become available.
+          </div>
+        </div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]>
-<script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
-<script src="Scripts/bootstrap.min.js"></script>
+        <div class="faq-card" id="faq-5">
+          <button class="faq-card__question" aria-expanded="false" aria-controls="faq-ans-5">
+            What if I already selected a roommate before acceptance?
+            <svg class="faq-card__chevron" viewBox="0 0 16 9" aria-hidden="true">
+              <polyline points="1 1 8 8 15 1"/>
+            </svg>
+          </button>
+          <div class="faq-card__answer" id="faq-ans-5">
+            No worries! You can still join Engineering House. Talk to the recruitment chair about your specific
+            situation and we'll work with you to find the best arrangement.
+          </div>
+        </div>
+
+        <div class="faq-card" id="faq-6">
+          <button class="faq-card__question" aria-expanded="false" aria-controls="faq-ans-6">
+            How much does it cost to join?
+            <svg class="faq-card__chevron" viewBox="0 0 16 9" aria-hidden="true">
+              <polyline points="1 1 8 8 15 1"/>
+            </svg>
+          </button>
+          <div class="faq-card__answer" id="faq-ans-6">
+            Off-floor membership is $40/semester and on-floor membership is $90/semester. These dues go toward
+            house events, supplies, and improvements.
+          </div>
+        </div>
+
+        <div class="faq-card" id="faq-7">
+          <button class="faq-card__question" aria-expanded="false" aria-controls="faq-ans-7">
+            How do I join?
+            <svg class="faq-card__chevron" viewBox="0 0 16 9" aria-hidden="true">
+              <polyline points="1 1 8 8 15 1"/>
+            </svg>
+          </button>
+          <div class="faq-card__answer" id="faq-ans-7">
+            Apply through your RIT housing contract during room selection. List Engineering House as your preference.
+            A selection committee reviews applications. You can also reach out to
+            <a href="mailto:ehouserecruitment@gmail.com" style="color:var(--accent-blue);">ehouserecruitment@gmail.com</a>
+            for more information.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
 </body>
 </html>

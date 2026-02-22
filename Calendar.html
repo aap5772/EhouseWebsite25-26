@@ -1,244 +1,130 @@
-﻿<!DOCTYPE HTML>
-<!--
-    Photon by HTML5 UP
-    html5up.net
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering House — Calendar</title>
+  <meta name="description" content="Engineering House events calendar and annual activities at RIT.">
+  <link rel="stylesheet" href="css/ehouse.css">
+  <style>
+    .events-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
-    <title>Calendar</title>
-
-    <link rel="stylesheet" href="Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="Content/Site.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-83915670-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-    <script type="text/javascript">
-        var x, n = 0, rotINT
-        var vel = 0;
-        function rotateLogo()
-        {
-            vel = vel + 1.5 / (vel + 1);
-            x=document.getElementById("rotate")
-            clearInterval(rotINT)
-            rotINT = setInterval("startRotate()", 3)
-        }
-        function startRotate()
-        {
-            //n = n + 1
-            //if (n >= 45) {
-            //    clearInterval(rotINT)
-            //    n = 0;
-            //}
-
-            //var k = n / 45.0
-            //k = - k * k * (2 * k - 3) * 45
-
-            n = (n + vel) % 360;
-            var k = n;
-            vel -= 0.0075;
-
-            if (vel < 0)
-                clearInterval(rotINT)
-
-            x.style.transform="rotate(" + k + "deg)"
-            x.style.webkitTransform="rotate(" + k + "deg)"
-            x.style.OTransform="rotate(" + k + "deg)"
-            x.style.MozTransform = "rotate(" + k + "deg)"
-        }
-    </script>
-
+    @media (max-width: 768px) {
+      .event-card {
+        flex-direction: column;
+      }
+      .event-card__img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+  <div id="nav-placeholder"></div>
 
-                <a class="navbar-brand" href="index.html">
-                    <div class="logo" onmouseover="rotateLogo()">
-                        <div id="rotate" style="background-image: url('images/LogoOutside.png')"></div>
-                        <div id="center" style="background-image: url('images/LogoInside.png')"></div>
-                    </div>
-                </a>
-            </div>
+  <main>
 
-            <div id="navbar" class="collapse navbar-collapse" role="navigation">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Information <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="Membership">Membership</a></li>
-                            <li><a href="VirtualTour">Virtual Tour</a></li>
-                            <li><a href="Leadership">Leadership</a></li>
-							<li><a href="FAQ.html">FAQ</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="Projects.html">ImagineRIT</a></li>
-                            <li><a href="PublicRelations.html">Public Relations</a></li>
-                            <li><a href="Calendar.html">Calendar</a></li>
-                            <li><a href="Jankathon.html">Jankathon</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <section id="one" class="main style2 special">
-        <div class="container">
-            <header>
-                <h2>Engineering House Calendar</h2>
-                <p>Here is where we post information about upcoming events and activities.</p>
-            </header>
-        </div>
+    <!-- ====== HERO ====== -->
+    <section class="hero-section" aria-labelledby="cal-hero-title">
+      <span class="hero-section__label">EVENTS</span>
+      <h1 class="hero-section__title" id="cal-hero-title">Engineering House Calendar</h1>
+      <p class="hero-section__desc">Check out our upcoming events and activities throughout the year.</p>
     </section>
 
-    <section id="two" class="main style1 special">
-        <div class="container">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW5naG91c2VldmVudHNAZ21haWwuY29t&amp;color=%231F753C&amp;color=%2381910B" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-            </div>
-            <br />
-            <a href="https://calendar.google.com/calendar/embed?src=g.rit.edu_f1pc4bhsgac5lic17qhonkcaik%40group.calendar.google.com&ctz=America/New_York" target="_blank">View in Google Calendar</a>
-        </div>
-    </section>
-    <section id="events" class="main style1">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <img src="images/Events/BBQ.jpg" />
-                </div>
-                <div class="col-sm-9">
-                    <header>
-                        <h2>Alumni Barbeque</h2>
-                        <p>Early First Semester</p>
-                    </header>
-                    <p>Each year we get together with our alumni to enjoy barbeque and play fun games!</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3"><img src="images/Events/BeachDay.jpg" /></div>
-                <div class="col-sm-9">
-                    <header>
-                        <h2>Beach Day</h2>
-                        <p>Early First Semester</p>
-                    </header>
-                    <p>Every year we get together and go to Ontario Beach Park to have a barbeque and ride a carousel.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3"><img src="images/Events/MudTug.jpg" /></div>
-                <div class="col-sm-9">
-                    <header>
-                        <h2>Mud Tug</h2>
-                        <p>Early First Semester</p>
-                    </header>
-                    <p>RIT hosts an annual tug-of-war competition in which Engineering House participates.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3"><img src="images/Events/DarienLake.jpg" /></div>
-                <div class="col-sm-9">
-                    <header>
-                        <h2>Darien Lake</h2>
-                        <p>Mid First Semester</p>
-                    </header>
-                    <p>Darien Lake is an amusement park that we go to during first semester every year.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3"><img src="images/Events/Altitude.jpg" /></div>
-                <div class="col-sm-9">
-                    <header>
-                        <h2>Altitude</h2>
-                        <p>Early Second Semester</p>
-                    </header>
-                    <p>Altitude is a trampoline park that Engineering House attends once or twice a year.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3"><img src="images/Events/Letchworth.jpg" /></div>
-                <div class="col-sm-9">
-                    <header>
-                        <h2>Letchworth</h2>
-                        <p>Mid Second Semester</p>
-                    </header>
-                    <p>Letchworth is a national park where we camp in cabins and make hobo food.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3"><img src="images/Events/Formal.jpg" /></div>
-                <div class="col-sm-9">
-                    <header>
-                        <h2>Formal</h2>
-                        <p>Late Second Semester</p>
-                    </header>
-                    <p>
-                        At the end of the year, to celebrate all that we have accomplished we hold a formal where everyone dresses up to eat and dance.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <!-- ====== CALENDAR EMBED ====== -->
+    <section class="section section--surface" aria-label="Calendar embed">
+      <div class="placeholder-box" style="margin-bottom:var(--spacing-lg);">
+        <svg class="placeholder-box__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <p class="placeholder-box__text">Google Calendar Embed</p>
+      </div>
+      <div style="text-align:center;">
+        <a href="https://calendar.google.com" target="_blank" rel="noopener"
+           style="font-family:'Horizon',sans-serif;font-size:14px;font-weight:600;color:var(--text-secondary);">
+          View full calendar on Google Calendar
+        </a>
+      </div>
     </section>
 
+    <!-- ====== RECURRING EVENTS ====== -->
+    <section class="section section--surface" aria-labelledby="events-title">
+      <div class="section__header">
+        <h2 class="section__title section__title--accent" id="events-title">Annual Events &amp; Activities</h2>
+      </div>
 
-    <!-- Footer -->
-    <section id="footer">
-        <ul class="icons">
-            <li><a href="https://twitter.com/RIT_Ehouse" target="_blank" class="icon alt fa-twitter"><span class="label">@@RIT_Ehouse</span></a></li>
-            <li><a href="https://www.facebook.com/RITEHouse/" target="_blank" class="icon alt fa-facebook"><span class="label">@@RITEHouse</span></a></li>
-            <li><a href="https://www.instagram.com/rit_ehouse/" target="_blank" class="icon alt fa-instagram"><span class="label">rit_ehouse</span></a></li>
-            <li><a href="mailto: ehouserecruitment@gmail.com" target="_blank" class="icon alt fa-envelope"><span class="label">ehouserecruitment@gmail.com</span></a></li>
-        </ul>
-        <div class="copyright">
-            &copy; Engineering House 2020
-            <br />
-            Design: <a href="http://html5up.net">HTML5 UP</a> &amp; Anthony Edvalson
-        </div>
+      <div class="events-list">
+
+        <article class="event-card">
+          <img
+            class="event-card__img"
+            src="https://images.unsplash.com/photo-1694192708556-3c2170f14734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600"
+            alt="Alumni Barbeque"
+            loading="lazy"
+          >
+          <div class="event-card__info">
+            <span class="event-card__time">Early First Semester</span>
+            <h3 class="event-card__name">Alumni Barbeque</h3>
+            <p class="event-card__desc">A beloved tradition where current members welcome back alumni for food, stories, and connection.</p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img
+            class="event-card__img"
+            src="https://images.unsplash.com/photo-1771367530744-910d2f71d148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600"
+            alt="Beach Day"
+            loading="lazy"
+          >
+          <div class="event-card__info">
+            <span class="event-card__time">Early First Semester</span>
+            <h3 class="event-card__name">Beach Day</h3>
+            <p class="event-card__desc">A trip to the beach for a full day of sun, sand, and fun with the house.</p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img
+            class="event-card__img"
+            src="https://images.unsplash.com/photo-1616089966833-297110e434ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600"
+            alt="Mud Tug"
+            loading="lazy"
+          >
+          <div class="event-card__info">
+            <span class="event-card__time">Early First Semester</span>
+            <h3 class="event-card__name">Mud Tug</h3>
+            <p class="event-card__desc">An epic outdoor competition where teams battle it out in the mud.</p>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img
+            class="event-card__img"
+            src="https://images.unsplash.com/photo-1759730840961-09faa5731a3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600"
+            alt="Formal"
+            loading="lazy"
+          >
+          <div class="event-card__info">
+            <span class="event-card__time">Late Second Semester</span>
+            <h3 class="event-card__name">Formal</h3>
+            <p class="event-card__desc">The annual Engineering House formal — dress up and celebrate the year with friends.</p>
+          </div>
+        </article>
+
+      </div>
     </section>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/respond.min.js"></script><![endif]-->
-    <script src="assets/js/main.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
 </body>
 </html>

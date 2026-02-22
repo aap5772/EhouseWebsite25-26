@@ -1,342 +1,216 @@
-﻿<!DOCTYPE HTML>
-<!--
-    Photon by HTML5 UP
-    html5up.net
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering House — Leadership</title>
+  <meta name="description" content="Meet the executive board and cabinet members of Engineering House at RIT.">
+  <link rel="stylesheet" href="css/ehouse.css">
+  <style>
+    .exec-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
 
-    <title>Leadership</title>
+    .cabinet-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
 
-    <link rel="stylesheet" href="Content/bootstrap.min.css"/>
-    <link rel="stylesheet" href="assets/css/main.css"/>
-    <link rel="stylesheet" href="Content/Site.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-83915670-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-    <script type="text/javascript">
-        var x, n = 0, rotINT
-        var vel = 0;
-
-        function rotateLogo() {
-            vel = vel + 1.5 / (vel + 1);
-            x = document.getElementById("rotate")
-            clearInterval(rotINT)
-            rotINT = setInterval("startRotate()", 3)
-        }
-
-        function startRotate() {
-            n = (n + vel) % 360;
-            var k = n;
-            vel -= 0.0075;
-
-            if (vel < 0)
-                clearInterval(rotINT)
-
-            x.style.transform = "rotate(" + k + "deg)"
-            x.style.webkitTransform = "rotate(" + k + "deg)"
-            x.style.OTransform = "rotate(" + k + "deg)"
-            x.style.MozTransform = "rotate(" + k + "deg)"
-        }
-    </script>
-
+    @media (max-width: 768px) {
+      .exec-grid {
+        gap: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div id="nav-placeholder"></div>
 
-            <a class="navbar-brand" href="index.html">
-                <div class="logo" onmouseover="rotateLogo()">
-                    <div id="rotate" style="background-image: url('images/LogoOutside.png')"></div>
-                    <div id="center" style="background-image: url('images/LogoInside.png')"></div>
-                </div>
-            </a>
-        </div>
+  <main>
 
-        <div id="navbar" class="collapse navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Information <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Membership.html">Membership</a></li>
-                        <li><a href="VirtualTour.html">Virtual Tour</a></li>
-                        <li><a href="Leadership.html">Leadership</a></li>
-                        <li><a href="FAQ.html">FAQ</a></li>
-                    </ul>
-                </li>
+    <!-- ====== HERO ====== -->
+    <section class="hero-section" aria-labelledby="lead-hero-title">
+      <span class="hero-section__label">LEADERSHIP</span>
+      <h1 class="hero-section__title" id="lead-hero-title">Executive Board</h1>
+      <p class="hero-section__desc">
+        The executive board is responsible for the overall management and direction of Engineering House.
+        They are elected by the membership and serve one-year terms.
+      </p>
+    </section>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Events <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Projects.html">Projects</a></li>
-                        <li><a href="PublicRelations.html">Public Relations</a></li>
-                        <li><a href="Calendar.html">Calendar</a></li>
-                        <li><a href="Jankathon.html">Jankathon</a></li>
-                    </ul>
-                </li>
+    <!-- ====== EXEC BOARD ====== -->
+    <section class="section section--blue" aria-labelledby="exec-title">
+      <h2 class="section__title section__title--on-dark" id="exec-title" style="text-align:center;margin-bottom:var(--spacing-xl);">Executive Officers</h2>
 
-            </ul>
-        </div>
-    </div>
-</nav>
+      <!-- Row 1: 3 cards -->
+      <div class="exec-grid" style="margin-bottom:var(--spacing-lg);">
+        <article class="exec-card">
+          <div class="exec-card__img-wrap">
+            <img
+              class="exec-card__img"
+              src="https://images.unsplash.com/photo-1648025933224-b7d1f2e49e82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+              alt="Cole Galla"
+              loading="lazy"
+            >
+          </div>
+          <div class="exec-card__body">
+            <span class="exec-card__role">President</span>
+            <span class="exec-card__name">Cole Galla</span>
+            <p class="exec-card__desc">The President oversees all Engineering House operations, chairs executive meetings, and represents the house to RIT administration and external organizations.</p>
+          </div>
+        </article>
 
-<section id="two" class="main style2">
-    <div class="container leadership">
-        <header>
-            <h2>Executive Board</h2>
-        </header>
-        <p>Executive Board is the heart of Engineering House. The strongest leaders of House hold these positions. They
-            manage all administrative aspects of House. They are required to meet and to discuss House issues before
-            every House and Cabinet meeting and to meet with House's adviser.</p>
+        <article class="exec-card">
+          <div class="exec-card__img-wrap">
+            <img
+              class="exec-card__img"
+              src="https://images.unsplash.com/photo-1661928438616-bda8b4931762?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+              alt="Felicia Groulx"
+              loading="lazy"
+            >
+          </div>
+          <div class="exec-card__body">
+            <span class="exec-card__role">Vice-President</span>
+            <span class="exec-card__name">Felicia Groulx</span>
+            <p class="exec-card__desc">The Vice-President assists the President and takes over duties in their absence. They coordinate between cabinet members and help drive house initiatives.</p>
+          </div>
+        </article>
 
-        <section id="president">
-            <img src="images/People/president.jpg"/>
-            <div>
-                <header>
-                    <h3>President</h3>
-                    <p>Cole Galla</p>
-                </header>
-                <p>The President leads Engineering House, sets goals for the year, and represents House to advisors and campus partners. They help guide projects, support other leaders, and keep everything moving forward.
-                <a href="eternalgodemperor.html" style="cursor:default">&nbsp;</a></p>
-            </div>
-        </section>
+        <article class="exec-card">
+          <div class="exec-card__img-wrap">
+            <img
+              class="exec-card__img"
+              src="https://images.unsplash.com/photo-1558430329-f70b2200f65a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+              alt="Cam Goldinger"
+              loading="lazy"
+            >
+          </div>
+          <div class="exec-card__body">
+            <span class="exec-card__role">Treasurer</span>
+            <span class="exec-card__name">Cam Goldinger</span>
+            <p class="exec-card__desc">The Treasurer manages the house budget, tracks expenses, processes reimbursements, and ensures financial transparency for all members.</p>
+          </div>
+        </article>
+      </div>
 
-        <hr/>
+      <!-- Row 2: 2 cards -->
+      <div class="exec-grid">
+        <article class="exec-card">
+          <div class="exec-card__img-wrap">
+            <img
+              class="exec-card__img"
+              src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+              alt="Gus Trisnati"
+              loading="lazy"
+            >
+          </div>
+          <div class="exec-card__body">
+            <span class="exec-card__role">Secretary</span>
+            <span class="exec-card__name">Gus Trisnati</span>
+            <p class="exec-card__desc">The Secretary records meeting minutes, maintains official house documents, and handles all internal and external correspondence.</p>
+          </div>
+        </article>
 
-        <section id="vicepresident">
-            <a href="VPSpecialPage.html" style="cursor: default">
-                <img src="images/People/vice-president.jpg"/>
-            </a>
-            <div>
-                <header>
-                    <h3>Vice-President</h3>
-                    <p>Felicia Groulx</p>
-                </header>
-                <p>The Vice-President supports the President and helps manage day-to-day House operations. They focus on internal organization and making sure members and projects are doing well.</p>
-            </div>
-        </section>
+        <article class="exec-card">
+          <div class="exec-card__img-wrap">
+            <img
+              class="exec-card__img"
+              src="https://images.unsplash.com/photo-1764451850143-428a7f9e931d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+              alt="Jack Zukowski"
+              loading="lazy"
+            >
+          </div>
+          <div class="exec-card__body">
+            <span class="exec-card__role">Historian</span>
+            <span class="exec-card__name">Jack Zukowski</span>
+            <p class="exec-card__desc">The Historian documents house activities, maintains photo archives, and preserves Engineering House history for future generations.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        <hr/>
+    <!-- ====== CABINET ====== -->
+    <section class="section section--surface" aria-labelledby="cab-title">
+      <div class="section__header">
+        <h2 class="section__title" id="cab-title">Cabinet</h2>
+        <p class="section__desc">Cabinet members are elected to lead specific areas of house operations and activities.</p>
+      </div>
 
-        <section id="treasurer">
-            <img src="images/People/treasurer.jpg"/>
-            <div>
+      <div class="cabinet-list">
+        <article class="cabinet-card">
+          <div class="cabinet-card__img" aria-hidden="true"></div>
+          <div class="cabinet-card__info">
+            <span class="cabinet-card__role">Public Relations Chairman</span>
+            <span class="cabinet-card__name">Kayden Boyle</span>
+            <p class="cabinet-card__desc">Manages Engineering House's public image, coordinates outreach events, and maintains relationships with the broader RIT community.</p>
+          </div>
+        </article>
 
-                <header>
-                    <h3>Treasurer</h3>
-                    <p>Cam Goldinger</p>
-                </header>
-                <p>The Treasurer manages House finances, including budgeting and purchases. They keep track of spending and help support fundraisers and events.</p>
-            </div>
-        </section>
+        <article class="cabinet-card">
+          <div class="cabinet-card__img" aria-hidden="true"></div>
+          <div class="cabinet-card__info">
+            <span class="cabinet-card__role">Computer Chairman</span>
+            <span class="cabinet-card__name">Alex Polo</span>
+            <p class="cabinet-card__desc">Maintains the house network, servers, and technical infrastructure. Provides IT support and manages the Engineering House website.</p>
+          </div>
+        </article>
 
-        <hr/>
+        <article class="cabinet-card">
+          <div class="cabinet-card__img" aria-hidden="true"></div>
+          <div class="cabinet-card__info">
+            <span class="cabinet-card__role">Recruitment Chairman</span>
+            <span class="cabinet-card__name">Isa Aysa-Lastra</span>
+            <p class="cabinet-card__desc">Leads recruitment efforts, organizes shadowing events, and helps prospective members learn about Engineering House.</p>
+          </div>
+        </article>
 
-        <section id="secretary">
-            <img src="images/People/secretary.jpg"/>
-            <div>
+        <article class="cabinet-card">
+          <div class="cabinet-card__img" aria-hidden="true"></div>
+          <div class="cabinet-card__info">
+            <span class="cabinet-card__role">Social Chairman</span>
+            <span class="cabinet-card__name">Jeremy Wallace</span>
+            <p class="cabinet-card__desc">Plans and coordinates social events, outings, and activities that bring members together outside of academics.</p>
+          </div>
+        </article>
 
-                <header>
-                    <h3>Secretary</h3>
-                    <p>Gus Trisnati</p>
-                </header>
-                <p>The Secretary keeps House organized by tracking attendance, running elections, and recording meeting notes. They make sure important information is documented and shared.</p>
-            </div>
-        </section>
-        <hr/>
-        <section id="historian">
-            <img src="images/People/historian.jpg"/>
-            <div>
+        <article class="cabinet-card">
+          <div class="cabinet-card__img" aria-hidden="true"></div>
+          <div class="cabinet-card__info">
+            <span class="cabinet-card__role">House Improvements Chairman</span>
+            <span class="cabinet-card__name">Jack DeSantis</span>
+            <p class="cabinet-card__desc">Oversees physical improvements to the house, coordinates maintenance projects, and manages the workshop spaces.</p>
+          </div>
+        </article>
 
-                <header>
-                    <h3>Historian</h3>
-                    <p>Jack Zukowski</p>
-                </header>
-                <p>The Historian maintains House records and preserves Engineering House history. They handle constitutional matters and document major House events throughout the year.</p>
-            </div>
-        </section>
-    </div>
-</section>
-<section class="main style1">
-    <br/>
-    <br/>
-    <div class="container leadership">
-        <header>
-            <h2>Cabinet</h2>
-        </header>
-        <p>Engineering House members stay busy with many different activities. Each member brings his or her own unique
-            skills to House and is elected into a Cabinet position based on these skills. Cabinet is required to meet at
-            least once per week. A description of each of these position as well as the name and picture of the current
-            chairman can be found below.</p>
+        <article class="cabinet-card">
+          <div class="cabinet-card__img" aria-hidden="true"></div>
+          <div class="cabinet-card__info">
+            <span class="cabinet-card__role">Freshman Representative</span>
+            <span class="cabinet-card__name">Ruby James Madden</span>
+            <p class="cabinet-card__desc">Represents the interests of freshman members and helps new students integrate into the Engineering House community.</p>
+          </div>
+        </article>
 
-        <div class="media">
-            <div class="media-left media-middle">
-                <img src="images/People/pr.jpg"/>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Public Relations Chairman</h4>
-                <p class="media-subtitle">Kayden Boyle</p>
-                <p>The Public Relations Chairman keeps Engineering House involved in the community by planning various
-                    community service events throughout the year; two such events are Margaret's House and volunteering
-                    at the local animal shelter. Some of the other organizations Engineering House volunteers with or
-                    collects donations for include: FoodLink, Ronald McDonald House, A Meal & More, Toys for Tots,
-                    UNICEF, and the National MS Society. The chairman is also responsible for updating the bulletin
-                    board in the Kate Gleason College of Engineering in order to keep RIT up to date on Engineering
-                    House's activities.</p>
-            </div>
-        </div>
+        <article class="cabinet-card">
+          <div class="cabinet-card__img" aria-hidden="true"></div>
+          <div class="cabinet-card__info">
+            <span class="cabinet-card__role">Project Coordinator</span>
+            <span class="cabinet-card__name">Sam Lipkin</span>
+            <p class="cabinet-card__desc">Coordinates ImagineRIT projects and other engineering initiatives, helping members bring their ideas to life.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        <div class="media">
-            <div class="media-left media-middle">
-                <img src="images/People/computer.jpg"/>
-            </div>
+  </main>
 
-            <div class="media-body">
-                <h4 class="media-heading">Computer Chairman</h4>
-                <p class="media-subtitle">Alex Polo</p>
-                <p>The Computer Chairman’s responsibilities include management of all computer-related and electronic
-                    equipment on floor and maintaining the website. This equipment includes, but is not limited to, the
-                    3D printer, printer, scanner, servers, all of the audio and visual equipment, and the computer
-                    closet.</p>
-            </div>
-        </div>
-
-        <div class="media">
-            <div class="media-left media-middle">
-                <img src="images/People/recruitment.jpg"/>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Recruitment Chairman</h4>
-                <p class="media-subtitle">Isa Aysa-Lastra</p>
-                <p> The Recruitment Chairman is responsible for recruiting new on-floor and off-floor members for
-                    Engineering House. They are also in charge of the organization of open houses, collaboration with
-                    RIT regarding prospective students interested in Engineering, and arranging shadow visits for
-                    potential House members. For more information on the shadow program, see the <a
-                            href="Membership.html">Membership</a> page.</p>
-            </div>
-        </div>
-
-        <div class="media">
-            <div class="media-left media-middle">
-                <img src="images/People/social.jpg"/>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Social Chairman</h4>
-                <p class="media-subtitle">Jeremy Wallace</p>
-                <p>The Social Chairman's primary responsibility is to plan and run games, activities, and social events
-                    for the members of House in order for them to get to know each other and have fun together. Some of
-                    the events organized include: a trip to Darien Lake, the Amazing Maize Maze, fancy/classy parties,
-                    cookouts, beach trips, and other activities.</p>
-            </div>
-        </div>
-
-        <div class="media">
-            <div class="media-left media-middle">
-                <img src="images/People/house-improvements.jpg"/>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">House Improvements Chairman</h4>
-                <p class="media-subtitle">Jack DeSantis</p>
-                <p>The House Improvements Chairman's responsibilities include brainstorming, planning, overseeing, and
-                    participating in any activities involving physical improvement to Engineering House.</p>
-            </div>
-        </div>
-
-        <div class="media">
-            <div class="media-left media-middle">
-                <img src="images/People/project.jpg"/>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Project Coordinator</h4>
-                <p class="media-subtitle">Sam Lipkin</p>
-                <p>The Project Coordinator is responsible for overseeing all house sponsored projects and ensuring those
-                    projects orginally pass a report to be sponsored apart from freshman project. they are also
-                    responsible for encouraging collaboration on projects, and, if necessary, organizing Engineering
-                    House sponsored projects. Further, they will be responsible for encouraging Engineering House’s
-                    involvement in the Imagine RIT festival.</p>
-            </div>
-        </div>
-
-        <div class="media">
-            <div class="media-left media-middle">
-                <img src="images/People/freshman-rep.jpg"/>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Freshman Representative</h4>
-                <p class="media-subtitle">Ruby James Madden</p>
-                <p>The Freshmen Representative is responsible for facilitating the raising of funds and the completion
-                    of freshmen project.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Footer -->
-<section id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/RIT_Ehouse" target="_blank" class="icon alt fa-twitter"><span class="label">@RIT_Ehouse</span></a>
-        </li>
-        <li><a href="https://www.facebook.com/RITEHouse/" target="_blank" class="icon alt fa-facebook"><span
-                class="label">@RITEHouse</span></a></li>
-        <li><a href="https://www.instagram.com/rit_ehouse/" target="_blank" class="icon alt fa-instagram"><span
-                class="label">rit_ehouse</span></a></li>
-        <li><a href="mailto: ehouserecruitment@gmail.com" target="_blank" class="icon alt fa-envelope"><span
-                class="label">ehouserecruitment@gmail.com</span></a></li>
-    </ul>
-    <div class="copyright">
-        &copy; Engineering House 2020
-        <br/>
-        Design: <a href="http://html5up.net">HTML5 UP</a> &amp; Anthony Edvalson
-    </div>
-</section>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]>
-<script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
-<script src="Scripts/bootstrap.min.js"></script>
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
 </body>
 </html>

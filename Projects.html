@@ -1,289 +1,165 @@
-﻿<!DOCTYPE HTML>
-<!--
-    Photon by HTML5 UP
-    html5up.net
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering House — ImagineRIT Projects</title>
+  <meta name="description" content="Engineering House ImagineRIT projects — student-built engineering creations presented at RIT's annual Innovation and Creativity Festival.">
+  <link rel="stylesheet" href="css/ehouse.css">
+  <style>
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 100%;
+    }
 
-    <title>Imagine RIT</title>
-
-    <link rel="stylesheet" href="Content/bootstrap.min.css"/>
-    <link rel="stylesheet" href="assets/css/main.css"/>
-    <link rel="stylesheet" href="Content/Site.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-83915670-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-    <script type="text/javascript">
-        var x, n = 0, rotINT
-        var vel = 0;
-
-        function rotateLogo() {
-            vel = vel + 1.5 / (vel + 1);
-            x = document.getElementById("rotate")
-            clearInterval(rotINT)
-            rotINT = setInterval("startRotate()", 3)
-        }
-
-        function startRotate() {
-            //n = n + 1
-            //if (n >= 45) {
-            //    clearInterval(rotINT)
-            //    n = 0;
-            //}
-
-            //var k = n / 45.0
-            //k = - k * k * (2 * k - 3) * 45
-
-            n = (n + vel) % 360;
-            var k = n;
-            vel -= 0.0075;
-
-            if (vel < 0)
-                clearInterval(rotINT)
-
-            x.style.transform = "rotate(" + k + "deg)"
-            x.style.webkitTransform = "rotate(" + k + "deg)"
-            x.style.OTransform = "rotate(" + k + "deg)"
-            x.style.MozTransform = "rotate(" + k + "deg)"
-        }
-    </script>
+    @media (max-width: 768px) {
+      .project-card {
+        flex-direction: column;
+      }
+      .project-card__img-wrap {
+        width: 100%;
+        min-height: 200px;
+      }
+      .project-card__img {
+        height: 180px;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div id="nav-placeholder"></div>
 
-            <a class="navbar-brand" href="index.html">
-                <div class="logo" onmouseover="rotateLogo()">
-                    <div id="rotate" style="background-image: url('images/LogoOutside.png')"></div>
-                    <div id="center" style="background-image: url('images/LogoInside.png')"></div>
-                </div>
-            </a>
-        </div>
+  <main>
 
-        <div id="navbar" class="collapse navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Information <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Membership.html">Membership</a></li>
-                        <li><a href="VirtualTour.html">Virtual Tour</a></li>
-                        <li><a href="Leadership.html">Leadership</a></li>
-                        <li><a href="FAQ.html">FAQ</a></li>
-                    </ul>
-                </li>
+    <!-- ====== HERO ====== -->
+    <section class="hero-section" aria-labelledby="proj-hero-title">
+      <span class="hero-section__label">INNOVATION</span>
+      <h1 class="hero-section__title" id="proj-hero-title">ImagineRIT</h1>
+      <p class="hero-section__desc">
+        Every year, Engineering House participates in ImagineRIT — RIT's annual Innovation and Creativity Festival.
+        Here are some of our projects.
+      </p>
+    </section>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Events <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Projects.html">ImagineRIT</a></li>
-                        <li><a href="PublicRelations.html">Public Relations</a></li>
-                        <li><a href="Calendar.html">Calendar</a></li>
-                        <li><a href="Jankathon.html">Jankathon</a></li>
-                    </ul>
-                </li>
+    <!-- ====== PROJECTS ====== -->
+    <section class="section section--surface" aria-label="Project list">
+      <div class="project-list">
 
-            </ul>
-        </div>
-    </div>
-</nav>
-<section id="one" class="main style1">
-    <div class="container">
-        <header class="major">
-            <h2>ImagineRIT</h2>
-        </header>
-        <p>Every year, RIT hosts the ImagineRIT festival to showcase the innovative and creative spirit of RIT students,
-            faculty and staff. Engineering House consistently participates in the festival, getting together in groups
-            to create projects that combine engineering skills and ingenuity.</p>
-    </div>
-</section>
-<section id="two" class="main style2">
-    <div class="container">
+        <article class="project-card">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img" style="background:var(--stroke-border);border-radius:var(--radius-xl);"></div>
+          </div>
+          <div class="project-card__info">
+            <h2 class="project-card__title">Mustang PRS</h2>
+            <p class="project-card__lead">Project Lead — Jack Desantis</p>
+            <p class="project-card__desc">
+              The purpose of the Power Series Racing (PRS) is to modify a kid's electric toy to race around a track
+              and impress the crowd for a maximum of $500. Makerspaces, Hackerspaces, high schools and colleges all
+              jump in on the fun and build their masterpieces to race at high speeds. These races happen at many
+              Makerfaires around the country and we did quite well for our first race ever down in Queens, NY.
+            </p>
+          </div>
+        </article>
 
-        <section id="mustang">
-            <br/>
-            <br/>
-            <div class="row">
-                <div class="col-sm-3 col-xs-12">
-                    <div class="tile-simple">
-                        <img src="images/ImagineRIT/mustang.png"/>
-                    </div>
-                </div>
-                <div class="col-sm-9 col-xs-12 imagine-text">
-                    <header>
-                        <h3>Mustang PRS</h3>
-                        <p>Jack DeSantis, Cameron Goya, Alex Barbov, Olive Viehland, Charlie Morgan, Andrea Sahm, Isabel
-                            Aysa-Lastra</p>
-                    </header>
-                    <p>The purpose of the Power Series Racing (PRS) is to modify a kid’s electric toy to race around a
-                        track and impress the crowd for a maximum of 500$. Makerspaces, Hackerspaces, highschools and
-                        colleges all jump in on the fun and build their masterpieces to race around a track at high
-                        speeds and wear funny costumes/have funny cars to impress the crowd for bonus Moxie points.
-                        These races happen at many Makerfaires around the country and we did quite well for our first
-                        race ever down in Queens, NY.</p>
-                </div>
-            </div>
-        </section>
+        <article class="project-card">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img" style="background:var(--stroke-border);border-radius:var(--radius-xl);"></div>
+          </div>
+          <div class="project-card__info">
+            <h2 class="project-card__title">Beltsander Racing</h2>
+            <p class="project-card__lead">Project Lead — Gus Trisnati &amp; Kaden Boyle</p>
+            <p class="project-card__desc">
+              A high speed raceway for belt sanders that we present at Rochester Museum &amp; Science Center.
+            </p>
+          </div>
+        </article>
 
+        <article class="project-card">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img" style="background:var(--stroke-border);border-radius:var(--radius-xl);"></div>
+          </div>
+          <div class="project-card__info">
+            <h2 class="project-card__title">Human Hamster Wheel</h2>
+            <p class="project-card__lead">Project Lead — Cam Goldinger</p>
+            <p class="project-card__desc">
+              A 7-foot-tall hamster wheel you can actually run on! One of our biggest and most popular attractions at ImagineRIT.
+            </p>
+          </div>
+        </article>
 
-        <section id="MAME">
-            <br/>
-            <br/>
-            <div class="row">
-                <div class="col-sm-3 col-xs-12">
-                    <div class="tile-simple">
-                        <img src="images/ImagineRIT/mame.png"/>
-                    </div>
-                </div>
-                <div class="col-sm-9 col-xs-12 imagine-text">
-                    <header>
-                        <h3>MAME: Multiple Arcade Machine Emulator</h3>
-                        <p>Currently Managed by Cabinet members</p>
-                    </header>
-                    <p>"The MAME" is a new take on the old style arcade cabinets from 70's and 80's. It can play games
-                        from real arcade cabinets all the way through Nintendo 64 titles. And with lights and sounds
-                        like those of cabinets from the 70's and 80's, it will truly feel like going back in time.</p>
-                </div>
-            </div>
-        </section>
+        <article class="project-card">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img" style="background:var(--stroke-border);border-radius:var(--radius-xl);"></div>
+          </div>
+          <div class="project-card__info">
+            <h2 class="project-card__title">All Seeing Eye</h2>
+            <p class="project-card__lead">Project Lead — Nat Krah</p>
+            <p class="project-card__desc">
+              A tentacle arm that uses computer vision to track movement. Behind the scenes, a system of intricate
+              pulleys works in tandem with Python and C code to bring the arm to life.
+            </p>
+          </div>
+        </article>
 
-        <section id="hamster">
-            <br/>
-            <br/>
-            <div class="row">
-                <div class="col-sm-3 col-xs-12">
-                    <div class="tile-simple">
-                        <img src="images/ImagineRIT/hamster_wheel.jpg"/>
-                    </div>
-                </div>
-                <div class="col-sm-9 col-xs-12 imagine-text">
-                    <header>
-                        <h3>Human Hamster Wheel</h3>
-                        <p>Annie Loomis</p>
-                    </header>
-                    <p>A 7-foot-tall hamster wheel you can actually run on! One of our biggest and most popular
-                        attractions at Imagine.</p>
-                </div>
-            </div>
-        </section>
+        <article class="project-card">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img" style="background:var(--stroke-border);border-radius:var(--radius-xl);"></div>
+          </div>
+          <div class="project-card__info">
+            <h2 class="project-card__title">RC Plane</h2>
+            <p class="project-card__lead">Project Lead — Alex Polo &amp; Adam Riely</p>
+            <p class="project-card__desc">
+              An in-house, fully 3D-printed RC aircraft created as a student engineering project. The design highlights
+              how aerodynamic structure and electronic control systems integrate into a functional platform. Developed
+              to practice CAD, fabrication, and iterative testing.
+            </p>
+          </div>
+        </article>
 
-        <section id="allseeingeye">
-            <br/>
-            <br/>
-            <div class="row">
-                <div class="col-sm-3 col-xs-12">
-                    <div class="tile-simple">
-                        <img src="images/ImagineRIT/allseeingeye.jpg"/>
-                    </div>
-                </div>
-                <div class="col-sm-9 col-xs-12 imagine-text">
-                    <header>
-                        <h3>All Seeing Eye</h3>
-                        <p>Nat Krah, Adam Shultzer, Sam Lipkin</p>
-                    </header>
-                    <p>A tentacle arm that uses computer vision to track movement. Behind the scenes, a system of
-                        intricate pulleys works in tandem with Python and C code to bring the arm to life.</p>
-                </div>
-            </div>
-        </section>
+        <article class="project-card">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img" style="background:var(--stroke-border);border-radius:var(--radius-xl);"></div>
+          </div>
+          <div class="project-card__info">
+            <h2 class="project-card__title">Synthia</h2>
+            <p class="project-card__lead">Project Lead — Jeremy Wallace</p>
+            <p class="project-card__desc">
+              A hand-built synthesizer exploring the intersection of electronics, music, and creative engineering.
+            </p>
+          </div>
+        </article>
 
-        <section id="rcplane">
-            <br/>
-            <br/>
-            <div class="row">
-                <div class="col-sm-3 col-xs-12">
-                    <div class="tile-simple">
-                        <img src="images/ImagineRIT/rubens.png"/>
-                    </div>
-                </div>
-                <div class="col-sm-9 col-xs-12 imagine-text">
-                    <header>
-                        <h3>RC Plane</h3>
-                        <p>Alex Polo, Adam Reily</p>
-                    </header>
-                    <p>We make RC planes</p>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
-<section id="three" class="main style1 special thick">
-    <div class="container">
-        <header>
-            <h3>Like What You See?</h3>
-        </header>
-        <ul class="actions">
-            <li><a href="Membership.html" class="button special">How to Join</a></li>
-            <li><a href="index.html" class="button">Back to Home</a></li>
-        </ul>
-    </div>
-</section>
+        <article class="project-card">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img" style="background:var(--stroke-border);border-radius:var(--radius-xl);"></div>
+          </div>
+          <div class="project-card__info">
+            <h2 class="project-card__title">Micro Mouse</h2>
+            <p class="project-card__lead">Project Lead — Dylan</p>
+            <p class="project-card__desc">
+              An autonomous maze-solving robot based on the competition of the same name. This tiny robot blends
+              ideas of mechanical, electrical, and software engineering.
+            </p>
+          </div>
+        </article>
 
-<!-- Footer -->
-<section id="footer">
-    <ul class="icons">
-        <li><a href="https://twitter.com/RIT_Ehouse" target="_blank" class="icon alt fa-twitter"><span class="label">@RIT_Ehouse</span></a>
-        </li>
-        <li><a href="https://www.facebook.com/RITEHouse/" target="_blank" class="icon alt fa-facebook"><span
-                class="label">@RITEHouse</span></a></li>
-        <li><a href="https://www.instagram.com/rit_ehouse/" target="_blank" class="icon alt fa-instagram"><span
-                class="label">rit_ehouse</span></a></li>
-        <li><a href="mailto: ehouserecruitment@gmail.com" target="_blank" class="icon alt fa-envelope"><span
-                class="label">ehouserecruitment@gmail.com</span></a></li>
-    </ul>
-    <div class="copyright">
-        &copy; Engineering House 2020
-        <br/>
-        Design: <a href="http://html5up.net">HTML5 UP</a> &amp; Anthony Edvalson
-    </div>
-</section>
+      </div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]>
-<script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
-<script src="Scripts/bootstrap.min.js"></script>
+      <!-- GitHub link -->
+      <p style="text-align:center;max-width:640px;margin:var(--spacing-2xl) auto 0;font-size:16px;line-height:1.375;letter-spacing:0.32px;color:var(--text-primary);">
+        If you want to learn more about our projects, feel free to look at our
+        <a href="https://github.com/ehouserit" target="_blank" rel="noopener" style="color:var(--accent-blue);text-decoration:underline;">GitHub</a>
+        where we have recently started to document our projects.
+      </p>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
 </body>
 </html>
