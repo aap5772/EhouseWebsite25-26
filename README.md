@@ -35,7 +35,7 @@ current chair.
 
 - **RIT-hosted version (out of date):** [rit.edu/sg/ehouse](https://www.rit.edu/sg/ehouse/index.html)
 - **GitHub Pages version (in progress):
-  ** [aap5772.github.io/EhouseWebsite25-26](https://aap5772.github.io/EhouseWebsite25-26/)
+  ** [ehouserit.github.io](ehouserit.github.io)
 
 ## Contributing
 
