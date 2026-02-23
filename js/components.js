@@ -52,7 +52,7 @@ const NAV_HTML = `
       <div class="nav-dropdown" role="menu">
         <a href="Calendar.html" role="menuitem">Calendar</a>
         <a href="Jankathon.html" role="menuitem">Jankathon</a>
-        <a href="Projects.html" role="menuitem">ImagineRIT Projects</a>
+        <a href="Projects.html" role="menuitem">Projects</a>
       </div>
     </div>
 
@@ -82,14 +82,14 @@ const NAV_HTML = `
   <span class="mobile-section-label">Events</span>
   <a href="Calendar.html">Calendar</a>
   <a href="Jankathon.html">Jankathon</a>
-  <a href="Projects.html">ImagineRIT Projects</a>
+  <a href="Projects.html">Projects</a>
 </div>
 `;
 
 const FOOTER_HTML = `
 <footer class="footer">
   <div class="footer__social">
-    <a href="https://github.com/ehouserit" target="_blank" rel="noopener" aria-label="GitHub">
+    <a href="https://github.com/Engineering-House" target="_blank" rel="noopener" aria-label="GitHub">
       <svg viewBox="0 0 33 36" aria-hidden="true">
         <path d="M16.25 0c-8.98 0-16.25 7.44-16.25 16.63 0 7.35 4.66 13.58 11.12 15.79 0.81 0.15 1.12-0.35 1.12-0.78 0-0.38-0.02-1.68-0.02-3.06-4.1 0.69-5.15-1.11-5.48-2.06-0.18-0.48-0.97-1.94-1.66-2.33-0.57-0.31-1.37-1-0.02-1.02 1.28-0.02 2.19 1.19 2.5 1.69 1.46 2.41 3.8 1.69 4.74 1.26 0.14-1.07 0.57-1.8 1.04-2.21-3.62-0.42-7.41-1.84-7.41-8.19 0-1.8 0.63-3.28 1.67-4.43-0.16-0.41-0.74-2.09 0.16-4.38 0 0 1.36-0.44 4.48 1.71 1.3-0.37 2.69-0.55 4.07-0.55 1.38 0 2.77 0.18 4.07 0.55 3.12-2.17 4.48-1.71 4.48-1.71 0.9 2.29 0.32 3.97 0.16 4.38 1.04 1.15 1.67 2.61 1.67 4.43 0 6.37-3.81 7.77-7.43 8.19 0.58 0.5 1.09 1.47 1.09 2.96 0 2.12-0.02 3.83-0.02 4.77 0 0.43 0.31 0.95 1.11 0.78 6.42-2.21 11.06-8.46 11.06-15.79 0-9.19-7.27-16.63-16.25-16.63z" fill="none" stroke-width="0" fill-rule="evenodd"/>
       </svg>

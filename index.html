@@ -6,6 +6,7 @@
   <title>Engineering House” Home</title>
   <meta name="description" content="Engineering House is a Special Interest House at RIT focused on collaboration, innovation, and community.">
   <link rel="stylesheet" href="css/ehouse.css">
+  <link rel="icon" href="images/favicon.ico">
   <style>
     /* ---- Home-page specific styles ---- */
 
@@ -13,7 +14,8 @@
     .home-hero {
       position: relative;
       width: 100%;
-      height: 900px;
+      height: auto;
+      aspect-ratio: 21/9;
       background-color: var(--primary-blue);
       overflow: hidden;
       display: flex;
@@ -21,7 +23,7 @@
       align-items: flex-end;
       justify-content: flex-start;
       gap: 15px;
-      padding: 0;
+      padding: 10px;
     }
 
     .home-hero__bg {
@@ -47,25 +49,27 @@
       position: relative;
       bottom: 0;
       left: 0;
-      height: 384px;
+      height: clamp(100px, 22vw, 384px);
       object-fit: contain;
       object-position: left bottom;
       opacity: 1;
       z-index: 1;
       width: auto;
-      flex: 0 0 auto;
+      flex: 0 1 auto;
     }
 
     .home-hero__title {
       position: relative;
       z-index: 1;
       font-family: 'Horizon', sans-serif;
-      font-size: clamp(48px, 8vw, 96px);
+      font-size: clamp(16px, 5.5vw, 96px);
       font-weight: 700;
       color: var(--brand-yellow);
       line-height: 1;
       text-align: left;
       margin: 0;
+      flex-shrink: 0;
+      white-space: nowrap;
       text-shadow: 0 2px 20px rgba(0,0,0,0.3);
     }
 
@@ -95,13 +99,6 @@
       gap: 12px;
       opacity: 0.15;
       overflow: clip;
-    }
-    /*actual youtube frame*/
-    iframe {
-      width: 100%;
-      height: auto;      
-      aspect-ratio: 16 / 9; /* Maintains 16:9 ratio */
-      justify-content: center;
     }
 
     /* Projects preview grid */
@@ -151,16 +148,22 @@
 
     @media (max-width: 768px) {
       .home-hero {
-        height: 500px;
-      }
-      .home-hero__title {
-        font-size: 40px;
+        height: 380px;
       }
       .feature-grid__row {
         flex-direction: column;
       }
       .project-grid {
         flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .home-hero {
+        height: 260px;
+      }
+      .home-hero__sprocket {
+        display: none;
       }
     }
   </style>
@@ -195,12 +198,19 @@
       <div class="row" style="align-items: stretch;">
         <div class="col">
           <div class="eh-about-carousel" style="position:relative; width:100%; height:600px; border-radius:var(--radius-2xl); overflow:hidden; background:var(--stroke-border);">
-            <img src="./images/Slideshow/1.jpg" alt="Engineering House image 1" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block;" loading="lazy">
-            <img src="./images/Slideshow/2.png" alt="Engineering House image 2" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:none;" loading="lazy">
-            <img src="./images/Slideshow/3.png" alt="Engineering House image 3" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:none;" loading="lazy">
+            <img src="./images/Slideshow/1.jpg" alt="Apple Picking" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block;" loading="lazy">
+            <img src="./images/Slideshow/2.png" alt="Alumni BBQ" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:none;" loading="lazy">
+            <img src="./images/Slideshow/3.png" alt="Beach Day" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:none;" loading="lazy">
+            <img src="./images/Slideshow/4.png" alt="Beach Day Volleyball" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block;" loading="lazy">
+            <img src="./images/Slideshow/5.jpg" alt="Campfire" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:none;" loading="lazy">
+            <img src="./images/Slideshow/6.jpg" alt="DJO Concert" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:none;" loading="lazy">
+            <img src="./images/Slideshow/7.jpg" alt="Formal Group photo" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block;" loading="lazy">
+            <img src="./images/Slideshow/8.jpg" alt="Mud Tug" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:none;" loading="lazy">
+            <img src="./images/Slideshow/9.png" alt="Tremblant" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:none;" loading="lazy">
+            <img src="./images/Slideshow/10.jpg" alt="Zoo Trip" class="eh-carousel-slide" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block;" loading="lazy">
 
-            <button type="button" class="eh-carousel-btn eh-carousel-prev" aria-label="Previous image" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);z-index:2;border:none;border-radius:999px;width:36px;font-size:30px;height:36px;background:rgba(0,0,0,0);color:var(--brand-yellow);cursor:pointer;">â®</button>
-            <button type="button" class="eh-carousel-btn eh-carousel-next" aria-label="Next image" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);z-index:2;border:none;border-radius:999px;width:36px;font-size:30px;height:36px;background:rgba(0,0,0,0);color:var(--brand-yellow);cursor:pointer;">â¯</button>
+            <button type="button" class="eh-carousel-btn eh-carousel-prev" aria-label="Previous image" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);z-index:2;border:none;border-radius:999px;width:36px;font-size:30px;height:36px;background:rgba(0,0,0,0);color:var(--brand-yellow);cursor:pointer;">❮</button>
+            <button type="button" class="eh-carousel-btn eh-carousel-next" aria-label="Next image" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);z-index:2;border:none;border-radius:999px;width:36px;font-size:30px;height:36px;background:rgba(0,0,0,0);color:var(--brand-yellow);cursor:pointer;">❯</button>
           </div>
           <script>
             (function () {
@@ -235,7 +245,7 @@
                 if (slides.length > 1) {
                   setInterval(function () {
                     showSlide((index + 1) % slides.length);
-                  }, 4000);
+                  }, 8000);
                 }
               });
             })();
@@ -262,49 +272,49 @@
           <h2 class="section__title section__title--yellow" id="features-title">Discover Engineering House</h2>
           <div class="feature-grid" style="margin-top:24px;">
             <div class="feature-grid__row">
-              <div class="feature-card">
+              <a class="feature-card" href="PublicRelations.html">
                 <svg class="feature-card__icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M3 11l19-9-9 19-2-8-8-2z"/>
                 </svg>
                 <span class="feature-card__label">Public Relations</span>
-              </div>
-              <div class="feature-card">
+              </a>
+              <a class="feature-card" href="Leadership.html">
                 <svg class="feature-card__icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z"/>
                 </svg>
                 <span class="feature-card__label">Leadership</span>
-              </div>
-              <div class="feature-card">
+              </a>
+              <a class="feature-card" href="Calendar.html">
                 <svg class="feature-card__icon" viewBox="0 0 24 24" aria-hidden="true">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                   <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
                   <line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
                 <span class="feature-card__label">Calendar</span>
-              </div>
+              </a>
             </div>
             <div class="feature-grid__row">
-              <div class="feature-card">
+              <a class="feature-card" href="Membership.html">
                 <svg class="feature-card__icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                   <circle cx="9" cy="7" r="4"/>
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                 </svg>
                 <span class="feature-card__label">Membership</span>
-              </div>
-              <div class="feature-card">
+              </a>
+              <a class="feature-card" href="Projects.html">
                 <svg class="feature-card__icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                 </svg>
                 <span class="feature-card__label">ImagineRIT</span>
-              </div>
-              <div class="feature-card">
+              </a>
+              <a class="feature-card" href="VirtualTour.html">
                 <svg class="feature-card__icon" viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="12" cy="12" r="10"/>
                   <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
                 </svg>
                 <span class="feature-card__label">Virtual Tour</span>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -329,7 +339,7 @@
     <!-- ====== PROJECTS ====== -->
     <section class="section section--surface" aria-labelledby="proj-title">
       <div class="section__header">
-        <h2 class="section__title" id="proj-title">ImagineRIT Projects</h2>
+        <h2 class="section__title" id="proj-title">Projects</h2>
         <p class="section__desc">
           Every year, Engineering House participates in ImagineRIT, RIT's annual Innovation and Creativity Festival.
         </p>
@@ -337,19 +347,19 @@
 
       <div class="project-grid project-grid--showcase" style="margin-bottom:var(--spacing-xl);">
         <div class="project-mini">
-          <img class="project-mini__img" src="https://placehold.co/200x200" alt="Placeholder image for Mustang PRS project preview" loading="lazy">
+          <img class="project-mini__img" src="./images/Projects/mustang.png" alt="Placeholder image for Mustang PRS project preview" loading="lazy">
           <div class="project-mini__fog"></div>
           <span class="project-mini__label">Mustang PRS</span>
         </div>
         <div class="project-mini">
-          <img class="project-mini__img" src="https://placehold.co/200x200" alt="Placeholder image for Human Hamster Wheel project preview" loading="lazy">
+          <img class="project-mini__img" src="./images/Projects/hamster_wheel.jpg" alt="Placeholder image for Human Hamster Wheel project preview" loading="lazy">
           <div class="project-mini__fog"></div>
           <span class="project-mini__label">Human Hamster Wheel</span>
         </div>
         <div class="project-mini">
-          <img class="project-mini__img" src="https://placehold.co/200x200" alt="Placeholder image for RC Plane project preview" loading="lazy">
+          <img class="project-mini__img" src="./images/Projects/allseeingeye.jpg" alt="Placeholder image for RC Plane project preview" loading="lazy">
           <div class="project-mini__fog"></div>
-          <span class="project-mini__label">RC Plane</span>
+          <span class="project-mini__label">All Seeing Eye</span>
         </div>
       </div>
 
@@ -397,52 +407,52 @@
         <div class="profile-card">
           <img
             class="profile-card__img"
-            src="https://images.unsplash.com/photo-1648025933224-b7d1f2e49e82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+            src="./images/People/president.jpg"
             alt="Cole Gala"
             loading="lazy"
           >
-          <span class="profile-card__name">Cole Gala</span>
           <span class="profile-card__role">President</span>
+          <span class="profile-card__name">Cole Gala</span>
         </div>
         <div class="profile-card">
           <img
             class="profile-card__img"
-            src="https://images.unsplash.com/photo-1661928438616-bda8b4931762?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+            src="./images/People/vice-president.jpg"
             alt="Felicia Groulx"
             loading="lazy"
           >
-          <span class="profile-card__name">Felicia Groulx</span>
           <span class="profile-card__role">Vice President</span>
+          <span class="profile-card__name">Felicia Groulx</span>
         </div>
         <div class="profile-card">
           <img
             class="profile-card__img"
-            src="https://images.unsplash.com/photo-1558430329-f70b2200f65a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+            src="./images/People/treasurer.jpg"
             alt="Cam Goldinger"
             loading="lazy"
           >
-          <span class="profile-card__name">Cam Goldinger</span>
           <span class="profile-card__role">Treasurer</span>
+          <span class="profile-card__name">Cam Goldinger</span>
         </div>
         <div class="profile-card">
           <img
             class="profile-card__img"
-            src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+            src="./images/People/secretary.jpg"
             alt="Gus Trisnati"
             loading="lazy"
           >
-          <span class="profile-card__name">Gus Trisnati</span>
           <span class="profile-card__role">Secretary</span>
+          <span class="profile-card__name">Gus Trisnati</span>
         </div>
         <div class="profile-card">
           <img
             class="profile-card__img"
-            src="https://images.unsplash.com/photo-1764451850143-428a7f9e931d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+            src="./images/People/historian.jpg"
             alt="Jack Zukowski"
             loading="lazy"
           >
-          <span class="profile-card__name">Jack Zukowski</span>
           <span class="profile-card__role">Historian</span>
+          <span class="profile-card__name">Jack Zukowski</span>
         </div>
       </div>
 

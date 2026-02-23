@@ -6,7 +6,13 @@
   <title>Engineering House — Virtual Tour</title>
   <meta name="description" content="Take a virtual tour of the Engineering House floor at RIT including the VAX workshop, lounges, and more.">
   <link rel="stylesheet" href="css/ehouse.css">
+  <link rel="icon" href="images/favicon.ico">
   <style>
+    .roomButton {
+      position: absolute;
+      cursor: pointer;
+    }
+
     .spaces-grid {
       display: flex;
       flex-wrap: wrap;
@@ -73,15 +79,54 @@
     <section class="section section--surface" aria-labelledby="map-title">
       <h2 class="section__title section__title--accent" id="map-title" style="text-align:center;margin-bottom:var(--spacing-xl);">Interactive Floor Map</h2>
 
-      <div class="placeholder-box" role="img" aria-label="Interactive floor map — coming soon">
-        <svg class="placeholder-box__icon" viewBox="0 0 24 24" aria-hidden="true">
-          <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
-          <line x1="8" y1="2" x2="8" y2="18"/>
-          <line x1="16" y1="6" x2="16" y2="22"/>
-        </svg>
-        <p class="placeholder-box__text" style="font-family:'Horizon',sans-serif;font-size:18px;font-weight:600;">Interactive Floor Map</p>
-        <p class="placeholder-box__text" style="font-size:14px;">Click rooms to view 360° tours</p>
+      <div class="placeholder-box" aria-label="Interactive floor map">
+        <div id="floormap-wrap" style="position: relative; display: inline-block; max-width: 100%;">
+          <img id="floormap" src="images/eh-floormap.png" style="display: block; max-width: 100%; height: auto; border-radius: var(--radius-lg);">
+
+          <!-- Room Buttons — data-* hold original pixel coords at native image size -->
+          <div class="roomButton" data-x="19"  data-y="18"  data-w="63" data-h="72"
+               onclick="window.open('https://goo.gl/maps/Suj9Kiy97zF2')"
+               role="button" tabindex="0" title="View the VAX Workshop"></div>
+          <div class="roomButton" data-x="19"  data-y="93"  data-w="63" data-h="72"
+               onclick="window.open('https://goo.gl/maps/7CTcKvnXoCs')"
+               role="button" tabindex="0" title="View the VAX Theater"></div>
+          <div class="roomButton" data-x="198" data-y="105" data-w="59" data-h="60"
+               onclick="window.open('https://goo.gl/maps/1JLv5JpdVBn')"
+               role="button" tabindex="0" title="View the Study Lounge"></div>
+          <div class="roomButton" data-x="369" data-y="105" data-w="59" data-h="60"
+               onclick="window.open('https://goo.gl/TqmmKP')"
+               role="button" tabindex="0" title="View the Kitchen"></div>
+          <div class="roomButton" data-x="540" data-y="105" data-w="60" data-h="60"
+               onclick="window.open('https://goo.gl/maps/UiAX5xRPqTNfWD8L8')"
+               role="button" tabindex="0" title="View the Pool Lounge"></div>
+          <div class="roomButton" data-x="300" data-y="105" data-w="25" data-h="60"
+               onclick="window.open('http://goo.gl/zrYYqJ')"
+               role="button" tabindex="0" title="View a Room"></div>
+        </div>
       </div>
+
+      <script>
+        (function () {
+          var img = document.getElementById('floormap');
+          var btns = document.querySelectorAll('#floormap-wrap .roomButton');
+
+          function scaleButtons() {
+            if (!img.naturalWidth) return;
+            var sx = img.clientWidth  / img.naturalWidth;
+            var sy = img.clientHeight / img.naturalHeight;
+            btns.forEach(function (btn) {
+              btn.style.left   = (btn.dataset.x * sx) + 'px';
+              btn.style.top    = (btn.dataset.y * sy) + 'px';
+              btn.style.width  = (btn.dataset.w * sx) + 'px';
+              btn.style.height = (btn.dataset.h * sy) + 'px';
+            });
+          }
+
+          img.addEventListener('load', scaleButtons);
+          window.addEventListener('resize', scaleButtons);
+          if (img.complete) scaleButtons();
+        })();
+      </script>
 
       <div class="map-legend" style="margin-top:var(--spacing-lg);">
         <span class="map-legend__item">1. VAX Workshop</span>

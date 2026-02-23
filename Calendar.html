@@ -6,19 +6,34 @@
   <title>Engineering House — Calendar</title>
   <meta name="description" content="Engineering House events calendar and annual activities at RIT.">
   <link rel="stylesheet" href="css/ehouse.css">
+  <link rel="icon" href="images/favicon.ico">
   <style>
     .events-list {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
-
+    .event-card__img {
+      width: auto;
+      height: 256px;
+      aspect-ratio: 4/3;
+    }
+    .placeholder-calendar {
+      width: auto;
+      height: auto;
+      border-radius: var(--radius-xl);
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      justify-content: center;
+      overflow: clip;
+    }
     @media (max-width: 768px) {
       .event-card {
         flex-direction: column;
       }
       .event-card__img {
-        width: 100%;
+        width: auto;
         height: 200px;
       }
     }
@@ -39,16 +54,11 @@
 
     <!-- ====== CALENDAR EMBED ====== -->
     <section class="section section--surface" aria-label="Calendar embed">
-      <div class="placeholder-box" style="margin-bottom:var(--spacing-lg);">
-        <svg class="placeholder-box__icon" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-        <p class="placeholder-box__text">Google Calendar Embed</p>
+      <div class="placeholder-calendar">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW5naG91c2VldmVudHNAZ21haWwuY29t&amp;color=%231F753C&amp;color=%2381910B" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
       </div>
       <div style="text-align:center;">
-        <a href="https://calendar.google.com" target="_blank" rel="noopener"
+        <a href="https://calendar.google.com/calendar/embed?src=g.rit.edu_f1pc4bhsgac5lic17qhonkcaik%40group.calendar.google.com&ctz=America/New_York" target="Ehouse Calendar" rel="noopener"
            style="font-family:'Horizon',sans-serif;font-size:14px;font-weight:600;color:var(--text-secondary);">
           View full calendar on Google Calendar
         </a>
@@ -66,7 +76,7 @@
         <article class="event-card">
           <img
             class="event-card__img"
-            src="https://images.unsplash.com/photo-1694192708556-3c2170f14734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600"
+            src="./images/Events/AlumniBBQ.jpg"
             alt="Alumni Barbeque"
             loading="lazy"
           >
@@ -80,7 +90,7 @@
         <article class="event-card">
           <img
             class="event-card__img"
-            src="https://images.unsplash.com/photo-1771367530744-910d2f71d148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600"
+            src="./images/Events/BeachDay.jpg"
             alt="Beach Day"
             loading="lazy"
           >
@@ -94,7 +104,7 @@
         <article class="event-card">
           <img
             class="event-card__img"
-            src="https://images.unsplash.com/photo-1616089966833-297110e434ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600"
+            src="./images/Events/MudTug.jpg"
             alt="Mud Tug"
             loading="lazy"
           >
@@ -108,7 +118,7 @@
         <article class="event-card">
           <img
             class="event-card__img"
-            src="https://images.unsplash.com/photo-1759730840961-09faa5731a3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600"
+            src="./images/Events/Formal.jpg"
             alt="Formal"
             loading="lazy"
           >

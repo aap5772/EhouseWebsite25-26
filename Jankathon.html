@@ -6,7 +6,35 @@
   <title>Engineering House — Jankathon</title>
   <meta name="description" content="Jankathon — Engineering House's 24-hour build-a-thon where clever, scrappy, and creative wins.">
   <link rel="stylesheet" href="css/ehouse.css">
+  <link rel="icon" href="images/favicon.ico">
   <style>
+    .hero-section {
+      position: relative;
+      background: transparent;
+      overflow: hidden;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('./images/Outreach/Jankathon/BannerAgain.png');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--primary-blue);
+      opacity: 0.82;
+      z-index: 1;
+    }
+    .hero-section > * {
+      position: relative;
+      z-index: 2;
+    }
+
     .detail-grid {
       display: flex;
       gap: 32px;
