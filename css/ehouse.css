@@ -6,7 +6,7 @@
 /* --- Font --- */
 @font-face {
   font-family: 'Horizon';
-  src: url('../Horizon.otf') format('opentype');
+  src: url('../fonts/Horizon.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
