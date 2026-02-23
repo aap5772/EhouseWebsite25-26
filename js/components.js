@@ -6,7 +6,19 @@
 const NAV_HTML = `
 <nav class="navbar" id="main-nav">
   <a href="index.html" class="navbar__logo" aria-label="Engineering House Home">
-    <img src="A_Sprocket_B.png" alt="Engineering House Logo">
+    <span class="navbar__logo-stack" aria-hidden="true">
+      <img
+        src="images/LogoOutside.png"
+        alt=""
+        class="navbar__logo-layer navbar__logo-layer--outer"
+        id="nav-logo-outer"
+      >
+      <img
+        src="images/LogoInside.png"
+        alt=""
+        class="navbar__logo-layer navbar__logo-layer--inner"
+      >
+    </span>
   </a>
 
   <div class="navbar__links" id="nav-links">
@@ -152,6 +164,8 @@ function initNav() {
     });
   }
 
+  initLogoSpin();
+
   // Hamburger
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -200,6 +214,48 @@ function initNav() {
       card.classList.toggle('open');
     });
   });
+}
+
+function initLogoSpin() {
+  const logo = document.querySelector('.navbar__logo');
+  const outer = document.getElementById('nav-logo-outer');
+  if (!logo || !outer) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let angle = 0;
+  let velocity = 0;
+  let rafId = null;
+  let lastTime = 0;
+
+  function tick(now) {
+    if (!lastTime) lastTime = now;
+    const dt = now - lastTime;
+    lastTime = now;
+
+    const stepScale = dt / 3;
+    angle = (angle + (velocity * stepScale)) % 360;
+    velocity -= 0.0075 * stepScale;
+
+    if (velocity <= 0) {
+      velocity = 0;
+      rafId = null;
+      lastTime = 0;
+      return;
+    }
+
+    outer.style.transform = `rotate(${angle}deg)`;
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function boostSpin() {
+    velocity += 1.5 / (velocity + 1);
+    if (rafId !== null) return;
+    rafId = requestAnimationFrame(tick);
+  }
+
+  logo.addEventListener('mouseenter', boostSpin);
+  logo.addEventListener('focus', boostSpin);
 }
 
 function setActiveLink() {

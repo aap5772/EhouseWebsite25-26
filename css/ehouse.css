@@ -131,10 +131,36 @@ ul, ol {
   text-decoration: none;
 }
 
-.navbar__logo img {
-  width: 52px;
+.navbar__logo > img {
   height: 52px;
   object-fit: contain;
+}
+
+.navbar__logo-stack {
+  position: relative;
+  height: 52px;
+  width: 52px;
+  display: block;
+}
+
+.navbar__logo-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+.navbar__logo-layer--outer {
+  transform: rotate(0deg);
+  will-change: transform;
+}
+
+.navbar__logo-layer--inner {
+  transform: scale(.95);
+  transform-origin: center;
 }
 
 .navbar__links {
@@ -930,6 +956,11 @@ ul, ol {
   inset: 0;
   background: rgba(2, 72, 137, 0.6);
   border-radius: var(--radius-xl);
+  transition: opacity 0.3s;
+}
+
+.project-mini:hover .project-mini__fog {
+  opacity: 0;
 }
 
 .project-mini__label {
