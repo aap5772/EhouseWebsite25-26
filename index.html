@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -190,7 +190,7 @@
         <h2 class="section__title" id="about-title">We Are Engineering House</h2>
         <p class="section__desc">
           Engineering House is a Special Interest House at RIT focused on collaboration, innovation, and community.
-          Founded in 1971 and located in DSP (formerly NRH), we bring together students who are passionate about
+          Founded in 1971 and located in the DSP residence hall (formerly NRH), we bring together students who are passionate about
           engineering, technology, and making things.
         </p>
       </div>
@@ -230,22 +230,31 @@
                   index = i;
                 }
 
+                var autoScroll;
+                function startAutoScroll() {
+                  autoScroll = setInterval(function () {
+                    showSlide((index + 1) % slides.length);
+                  }, 8000);
+                }
+
                 if (prev) {
                   prev.addEventListener('click', function () {
+                    clearInterval(autoScroll);
                     showSlide((index - 1 + slides.length) % slides.length);
+                    startAutoScroll();
                   });
                 }
 
                 if (next) {
                   next.addEventListener('click', function () {
+                    clearInterval(autoScroll);
                     showSlide((index + 1) % slides.length);
+                    startAutoScroll();
                   });
                 }
 
                 if (slides.length > 1) {
-                  setInterval(function () {
-                    showSlide((index + 1) % slides.length);
-                  }, 8000);
+                  startAutoScroll();
                 }
               });
             })();
@@ -253,7 +262,7 @@
         </div>
         <div class="col" style="display:flex;flex-direction:column;gap:24px;padding:16px 0;">
           <p style="font-size:16px;line-height:1.375;letter-spacing:0.32px;color:var(--text-primary);">
-            We're a tight-knit community that supports each other academically and personally. Whether you need help studying for an exam, want feedback on a project, or just need someone to grab dinner with there's always someone around.
+            We're a tight-knit community that supports each other academically and personally. Whether you need help studying for an exam, want feedback on a project, or just need someone to grab dinner with, there's always someone around.
           </p>
           <p style="font-size:16px;line-height:1.375;letter-spacing:0.32px;color:var(--text-primary);">
             From beach days and ski trips to hackathons and formal dinners, Engineering House offers a full spectrum of experiences that create lasting friendships and memories throughout your time at RIT.
@@ -306,7 +315,7 @@
                 <svg class="feature-card__icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                 </svg>
-                <span class="feature-card__label">ImagineRIT</span>
+                <span class="feature-card__label">Projects</span>
               </a>
               <a class="feature-card" href="VirtualTour.html">
                 <svg class="feature-card__icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -327,7 +336,7 @@
                       allowfullscreen></iframe>
           </div>
           <p style="font-size:16px;line-height:1.375;letter-spacing:0.32px;color:var(--text-on-primary);">
-            Engineering House provides a unique living and learning experience at RIT. Our members support each other through study sessions, project collaboration, and a shared passion for building things.
+            Engineering House provides a unique living and learning experience at RIT. Our members support each other through study sessions, project collaboration, and a shared passion for building, creating, and inventing.
           </p>
           <p style="font-size:16px;line-height:1.375;letter-spacing:0.32px;color:var(--text-on-primary);">
             We host events throughout the year from outdoor adventures and concerts to hackathons and formals. Engineering House isn't just where you live; it's where you find your people.
@@ -341,26 +350,26 @@
       <div class="section__header">
         <h2 class="section__title" id="proj-title">Projects</h2>
         <p class="section__desc">
-          Every year, Engineering House participates in ImagineRIT, RIT's annual Innovation and Creativity Festival.
+          Every year, Engineering House participates in Imagine RIT, RIT's annual Innovation and Creativity Festival.
         </p>
       </div>
 
       <div class="project-grid project-grid--showcase" style="margin-bottom:var(--spacing-xl);">
-        <div class="project-mini">
+        <a class="project-mini" href="Projects.html">
           <img class="project-mini__img" src="./images/Projects/mustang.png" alt="Placeholder image for Mustang PRS project preview" loading="lazy">
           <div class="project-mini__fog"></div>
           <span class="project-mini__label">Mustang PRS</span>
-        </div>
-        <div class="project-mini">
+        </a>
+        <a class="project-mini" href="Projects.html">
           <img class="project-mini__img" src="./images/Projects/hamster_wheel.jpg" alt="Placeholder image for Human Hamster Wheel project preview" loading="lazy">
           <div class="project-mini__fog"></div>
           <span class="project-mini__label">Human Hamster Wheel</span>
-        </div>
-        <div class="project-mini">
+        </a>
+        <a class="project-mini" href="Projects.html">
           <img class="project-mini__img" src="./images/Projects/allseeingeye.jpg" alt="Placeholder image for RC Plane project preview" loading="lazy">
           <div class="project-mini__fog"></div>
           <span class="project-mini__label">All Seeing Eye</span>
-        </div>
+        </a>
       </div>
 
       <div style="display:flex;justify-content:center;">

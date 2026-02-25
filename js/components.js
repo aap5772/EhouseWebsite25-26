@@ -36,9 +36,9 @@ const NAV_HTML = `
       <div class="nav-dropdown" role="menu">
         <a href="Membership.html" role="menuitem">Membership</a>
         <a href="Leadership.html" role="menuitem">Leadership</a>
-        <a href="FAQ.html" role="menuitem">FAQ</a>
         <a href="VirtualTour.html" role="menuitem">Virtual Tour</a>
         <a href="PublicRelations.html" role="menuitem">Public Relations</a>
+        <a href="FAQ.html" role="menuitem">FAQ</a>
       </div>
     </div>
 

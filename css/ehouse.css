@@ -1,6 +1,5 @@
 /* =========================================================
    Engineering House — Design System Stylesheet
-   Based on EhousePage.pen
    ========================================================= */
 
 /* --- Font --- */
@@ -962,6 +961,8 @@ ul, ol {
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--primary-blue);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .project-mini__img {
@@ -1050,9 +1051,9 @@ ul, ol {
 
 .project-card__desc {
   font-family: 'Alexandria', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.75;
   letter-spacing: 0.32px;
   color: var(--text-primary);
 }
