@@ -133,9 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navEl) navEl.outerHTML = NAV_HTML;
   if (footEl) footEl.outerHTML = FOOTER_HTML;
 
-  // Dark mode
-  const saved = localStorage.getItem('theme') || 'light';
-  applyTheme(saved);
+  // Theme: use saved choice when present; otherwise follow OS preference.
+  const saved = localStorage.getItem('theme');
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  applyTheme(saved || systemTheme, Boolean(saved));
 
   // Wait one tick so injected DOM is available
   requestAnimationFrame(() => {
@@ -144,9 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function applyTheme(theme) {
+function applyTheme(theme, persist = true) {
   document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
+  if (persist) localStorage.setItem('theme', theme);
   const icon = document.getElementById('theme-icon');
   if (icon) {
     icon.innerHTML = theme === 'dark' ? SUN_SVG : MOON_SVG;
@@ -159,7 +160,8 @@ function initNav() {
   const toggle = document.getElementById('theme-toggle');
   if (toggle) {
     toggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const current = document.documentElement.getAttribute('data-theme')
+        || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       applyTheme(current === 'dark' ? 'light' : 'dark');
     });
   }

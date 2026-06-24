@@ -54,6 +54,23 @@
   --nav-height: 70px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary-blue:        #012844;
+    --accent-blue:         #16448a;
+    --bg-primary:          #0a1a24;
+    --bg-surface:          #091820;
+    --nav-bg:              #0e1e28;
+    --card-bg:             #091820;
+    --text-primary:        #ebf2fa;
+    --text-secondary:      rgba(235, 242, 250, 0.8);
+    --text-on-primary:     #ebf2fa;
+    --text-on-primary-sub: rgba(235, 242, 250, 0.8);
+    --stroke-accent:       #16448a;
+    --stroke-border:       #122732;
+  }
+}
+
 /* --- Dark Mode --- */
 [data-theme="dark"] {
   --primary-blue:        #012844;
